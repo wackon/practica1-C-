@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Biblioteca\Books.cs" />
+    <Compile Include="Vista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista.designer.cs">
+      <DependentUpon>Vista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maquina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +73,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Vista.resx">
+      <DependentUpon>Vista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Maquina.resx">
       <DependentUpon>Maquina.cs</DependentUpon>
     </EmbeddedResource>

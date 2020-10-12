@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Practica1
 {
     public partial class Principal : Form
@@ -40,6 +41,12 @@ namespace Practica1
             Maquina objMaq = new Maquina();
             objMaq.Show();
 
+        }
+
+        private void bibliotecaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vista objVi = new Vista();
+            objVi.Show();
         }
     }
 }

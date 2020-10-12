@@ -32,13 +32,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.programasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nóminaProfesoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maquinaBancariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bibliotecaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empresaDeViajesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.nóminaProfesoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +86,15 @@
             this.programasToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.programasToolStripMenuItem.Text = "Programas";
             // 
+            // nóminaProfesoresToolStripMenuItem
+            // 
+            this.nóminaProfesoresToolStripMenuItem.Image = global::Practica1.Properties.Resources.Ingresar;
+            this.nóminaProfesoresToolStripMenuItem.Name = "nóminaProfesoresToolStripMenuItem";
+            this.nóminaProfesoresToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D1)));
+            this.nóminaProfesoresToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.nóminaProfesoresToolStripMenuItem.Text = "Nómina Profesores";
+            this.nóminaProfesoresToolStripMenuItem.Click += new System.EventHandler(this.nóminaProfesoresToolStripMenuItem_Click);
+            // 
             // maquinaBancariaToolStripMenuItem
             // 
             this.maquinaBancariaToolStripMenuItem.Name = "maquinaBancariaToolStripMenuItem";
@@ -99,6 +108,7 @@
             this.bibliotecaToolStripMenuItem.Name = "bibliotecaToolStripMenuItem";
             this.bibliotecaToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.bibliotecaToolStripMenuItem.Text = "Biblioteca";
+            this.bibliotecaToolStripMenuItem.Click += new System.EventHandler(this.bibliotecaToolStripMenuItem_Click);
             // 
             // empresaDeViajesToolStripMenuItem
             // 
@@ -131,15 +141,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // nóminaProfesoresToolStripMenuItem
-            // 
-            this.nóminaProfesoresToolStripMenuItem.Image = global::Practica1.Properties.Resources.Ingresar;
-            this.nóminaProfesoresToolStripMenuItem.Name = "nóminaProfesoresToolStripMenuItem";
-            this.nóminaProfesoresToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D1)));
-            this.nóminaProfesoresToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.nóminaProfesoresToolStripMenuItem.Text = "Nómina Profesores";
-            this.nóminaProfesoresToolStripMenuItem.Click += new System.EventHandler(this.nóminaProfesoresToolStripMenuItem_Click);
             // 
             // Principal
             // 
