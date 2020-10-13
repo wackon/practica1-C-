@@ -63,6 +63,16 @@ namespace Practica1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _238870 {
+            get {
+                object obj = ResourceManager.GetObject("238870", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap computadora_y_ordenador_imagen_animada_0004 {
             get {
                 object obj = ResourceManager.GetObject("computadora-y-ordenador-imagen-animada-0004", resourceCulture);

@@ -31,6 +31,7 @@ namespace Practica1
         private void nóminaProfesoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Nomina objNom = new Nomina();
+            objNom.MdiParent = this;
             objNom.Show();
            
             
@@ -39,6 +40,7 @@ namespace Practica1
         private void maquinaBancariaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Maquina objMaq = new Maquina();
+            objMaq.MdiParent = this;
             objMaq.Show();
 
         }
@@ -46,7 +48,13 @@ namespace Practica1
         private void bibliotecaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Vista objVi = new Vista();
+            objVi.MdiParent = this;
             objVi.Show();
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

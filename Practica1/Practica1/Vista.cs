@@ -97,9 +97,6 @@ namespace Practica1
 
              
 
-
-            
-
             /* foreach (Books vec in vector)
              {
 
@@ -195,6 +192,7 @@ namespace Practica1
 
         private void txBusDis_Click(object sender, EventArgs e)
         {
+            string salida = "";
             
             
               for (int i = 0; i < vector.Length; i++)
@@ -203,18 +201,27 @@ namespace Practica1
                     if (true == vector[i].getDisponible())
                     {
 
-                        txSalidaConsulta.Text = "Los libros disponibles en la actualidad son : \r\n"+
+                      
+                        salida = "Los libros disponibles en la actualidad son : \r\n"+
                         "Codigo : " +vector[i].getCodigo()+ "\r\n"+
                         "Nombre : "+ vector[i].getNombre() + "\r\n" +
-                        "Autor : " + vector[i].getAutor();
+                        "Autor : " + vector[i].getAutor() + "\r\n\r\n";
 
-
-                    }
+                        salida += salida;
+                          
 
                 }
-            }
+
+              }
+            txSalidaConsulta.Text = salida;
+        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txIngCod_TextChanged(object sender, EventArgs e)
         {
 
         }

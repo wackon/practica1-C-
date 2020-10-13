@@ -33,7 +33,6 @@
             this.btIngresar = new System.Windows.Forms.Button();
             this.txIngAut = new System.Windows.Forms.TextBox();
             this.txIngNom = new System.Windows.Forms.TextBox();
-            this.txIngCod = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@
             this.txBusDisp = new System.Windows.Forms.TextBox();
             this.rbDisponible = new System.Windows.Forms.RadioButton();
             this.rbNoDisp = new System.Windows.Forms.RadioButton();
+            this.txIngCod = new System.Windows.Forms.TextBox();
             this.gbIngresar.SuspendLayout();
             this.gbConsultar.SuspendLayout();
             this.SuspendLayout();
@@ -111,13 +111,6 @@
             this.txIngNom.Name = "txIngNom";
             this.txIngNom.Size = new System.Drawing.Size(247, 24);
             this.txIngNom.TabIndex = 5;
-            // 
-            // txIngCod
-            // 
-            this.txIngCod.Location = new System.Drawing.Point(145, 24);
-            this.txIngCod.Name = "txIngCod";
-            this.txIngCod.Size = new System.Drawing.Size(247, 24);
-            this.txIngCod.TabIndex = 4;
             // 
             // label4
             // 
@@ -331,6 +324,13 @@
             this.rbNoDisp.Text = "No Disponible";
             this.rbNoDisp.UseVisualStyleBackColor = true;
             // 
+            // txIngCod
+            // 
+            this.txIngCod.Location = new System.Drawing.Point(145, 24);
+            this.txIngCod.Name = "txIngCod";
+            this.txIngCod.Size = new System.Drawing.Size(247, 24);
+            this.txIngCod.TabIndex = 4;
+            // 
             // Vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,7 +359,6 @@
         private System.Windows.Forms.Button btIngresar;
         private System.Windows.Forms.TextBox txIngAut;
         private System.Windows.Forms.TextBox txIngNom;
-        private System.Windows.Forms.TextBox txIngCod;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox gbConsultar;
@@ -378,5 +377,6 @@
         private System.Windows.Forms.TextBox txBusDisp;
         private System.Windows.Forms.RadioButton rbNoDisp;
         private System.Windows.Forms.RadioButton rbDisponible;
+        private System.Windows.Forms.TextBox txIngCod;
     }
 }
