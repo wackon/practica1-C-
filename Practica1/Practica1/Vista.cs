@@ -17,7 +17,7 @@ namespace Practica1
     {
 
 
-        Books objB;
+        
         Books[] vector = new Books[3];
         int contador = 0;
         bool Disponible;
@@ -45,7 +45,7 @@ namespace Practica1
                     string Codigo = txIngCod.Text;
                     string Nombre = txIngNom.Text;
                     string Autor = txIngAut.Text;
-
+                    
 
 
                     if (rbDisponible.Checked == true)
@@ -120,10 +120,10 @@ namespace Practica1
             /* foreach (Books vec in vector)
              {
 
-                 txSalidaConsulta.Text = Convert.ToString(objB.getCodigo()) + "\r\n" +
-                     "Nombre : " + Convert.ToString(objB.getNombre()) + "\r\n" +
-                     "Autor : " + Convert.ToString(objB.getAutor()) + "\r\n" +
-                     "Disponible : " + Convert.ToString(objB.getDisponible()) + "\r\n\r\n";
+                 txSalidaConsulta.Text = Convert.ToString(vec.getCodigo()) + "\r\n" +
+                     "Nombre : " + Convert.ToString(vec.getNombre()) + "\r\n" +
+                     "Autor : " + Convert.ToString(vec.getAutor()) + "\r\n" +
+                     "Disponible : " + Convert.ToString(vec.getDisponible()) + "\r\n\r\n";
 
                  txSalidaConsulta.Text = txSalidaConsulta.Text + txSalidaConsulta.Text;
 
@@ -245,7 +245,7 @@ namespace Practica1
                 System.Windows.Forms.MessageBox.Show("Ingrese el código del libro a eliminar");
 
             }
-            else 
+            else
             {
 
                 string cod = txEliminar.Text;
@@ -262,7 +262,7 @@ namespace Practica1
                             for (int j = i; j < vector.Length - 1; j++)
                             {
 
-                                
+
                                 vector[j] = vector[j + 1];
                                 MessageBox.Show("el elemento ha sido borrado");
                             }
@@ -270,14 +270,14 @@ namespace Practica1
                         }
                     }
                     catch (IOException ex)
-                    { 
+                    {
 
                     }
-                    
+
                 }
-               
+
             }
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -294,19 +294,19 @@ namespace Practica1
 
                 for (int i = 0; i < vector.Length; i++)
                 {
-                    
 
-                        if (cod == vector[i].getCodigo())
-                        {
-                            vector[i].setDisponible(false);
-                             
-                        }
-                    
+
+                    if (cod == vector[i].getCodigo())
+                    {
+                        vector[i].setDisponible(false);
+
                     }
+
+                }
                 txPrestar.Text = "";
             }
 
-            }
+        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -331,7 +331,7 @@ namespace Practica1
                     }
 
                 }
-                 txEntregar.Text = "";
+                txEntregar.Text = "";
 
             }
         }
@@ -341,7 +341,7 @@ namespace Practica1
 
         }
     }
-    }
+}
 
 
 

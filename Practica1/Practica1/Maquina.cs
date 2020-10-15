@@ -56,7 +56,11 @@ namespace Practica1
                 
 
 
+            }else if (ValorIngresado > 400000)
+            {
+                MessageBox.Show("No esta permitido este valor de retiro");
             }
+
             else if (ValorIngresado >= 50000 && ValorIngresado <= 400000)
             {
 
@@ -270,6 +274,7 @@ namespace Practica1
 
         private void btIngresar_Click(object sender, EventArgs e)
         {
+          
             saldo = double.Parse(txSaldo.Text);
             btCalcular.Enabled = true;
             txSaldo.Text = "";

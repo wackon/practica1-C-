@@ -73,9 +73,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(307, 13);
+            this.label1.Font = new System.Drawing.Font("Elephant", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label1.Location = new System.Drawing.Point(351, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.Size = new System.Drawing.Size(112, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Biblioteca";
             // 
@@ -130,11 +132,11 @@
             // 
             this.btIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btIngresar.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btIngresar.Location = new System.Drawing.Point(484, 24);
+            this.btIngresar.Location = new System.Drawing.Point(453, 53);
             this.btIngresar.Name = "btIngresar";
             this.btIngresar.Size = new System.Drawing.Size(157, 36);
             this.btIngresar.TabIndex = 8;
-            this.btIngresar.Text = "Ingresar";
+            this.btIngresar.Text = "Ingresar Libro";
             this.btIngresar.UseVisualStyleBackColor = true;
             this.btIngresar.Click += new System.EventHandler(this.btIngresar_Click);
             // 
@@ -366,11 +368,11 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label10.Location = new System.Drawing.Point(196, 30);
+            this.label10.Location = new System.Drawing.Point(187, 20);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(295, 18);
+            this.label10.Size = new System.Drawing.Size(341, 18);
             this.label10.TabIndex = 10;
-            this.label10.Text = "Ingrese El Código Del Libro a Eliminar";
+            this.label10.Text = "Ingrese El Código Del Libro A Sacar De Uso";
             // 
             // button1
             // 
@@ -480,7 +482,7 @@
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.Desktop;
             this.Name = "Vista";
-            this.Text = "Vista";
+            this.Text = "Biblioteca";
             this.gbIngresar.ResumeLayout(false);
             this.gbIngresar.PerformLayout();
             this.gbConsultar.ResumeLayout(false);
