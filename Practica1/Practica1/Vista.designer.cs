@@ -30,13 +30,21 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.gbIngresar = new System.Windows.Forms.GroupBox();
+            this.rbNoDisp = new System.Windows.Forms.RadioButton();
+            this.rbDisponible = new System.Windows.Forms.RadioButton();
             this.btIngresar = new System.Windows.Forms.Button();
             this.txIngAut = new System.Windows.Forms.TextBox();
             this.txIngNom = new System.Windows.Forms.TextBox();
+            this.txIngCod = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gbConsultar = new System.Windows.Forms.GroupBox();
+            this.txBusDisp = new System.Windows.Forms.TextBox();
+            this.btBusDis = new System.Windows.Forms.Button();
+            this.btBusAu = new System.Windows.Forms.Button();
+            this.btBusNom = new System.Windows.Forms.Button();
+            this.txSalidaConsulta = new System.Windows.Forms.TextBox();
             this.btBusqudaCod = new System.Windows.Forms.Button();
             this.txBusAut = new System.Windows.Forms.TextBox();
             this.txBusNombre = new System.Windows.Forms.TextBox();
@@ -45,16 +53,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txSalidaConsulta = new System.Windows.Forms.TextBox();
-            this.btBusNom = new System.Windows.Forms.Button();
-            this.btBusAu = new System.Windows.Forms.Button();
-            this.btBusDis = new System.Windows.Forms.Button();
-            this.txBusDisp = new System.Windows.Forms.TextBox();
-            this.rbDisponible = new System.Windows.Forms.RadioButton();
-            this.rbNoDisp = new System.Windows.Forms.RadioButton();
-            this.txIngCod = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txEliminar = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.gbIngresar.SuspendLayout();
             this.gbConsultar.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -79,12 +85,39 @@
             this.gbIngresar.Controls.Add(this.label2);
             this.gbIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbIngresar.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.gbIngresar.Location = new System.Drawing.Point(43, 65);
+            this.gbIngresar.Location = new System.Drawing.Point(43, 29);
             this.gbIngresar.Name = "gbIngresar";
             this.gbIngresar.Size = new System.Drawing.Size(743, 163);
             this.gbIngresar.TabIndex = 1;
             this.gbIngresar.TabStop = false;
             this.gbIngresar.Text = "Ingresar Libro";
+            // 
+            // rbNoDisp
+            // 
+            this.rbNoDisp.AutoSize = true;
+            this.rbNoDisp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbNoDisp.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.rbNoDisp.Location = new System.Drawing.Point(278, 117);
+            this.rbNoDisp.Name = "rbNoDisp";
+            this.rbNoDisp.Size = new System.Drawing.Size(132, 22);
+            this.rbNoDisp.TabIndex = 11;
+            this.rbNoDisp.Text = "No Disponible";
+            this.rbNoDisp.UseVisualStyleBackColor = true;
+            // 
+            // rbDisponible
+            // 
+            this.rbDisponible.AutoSize = true;
+            this.rbDisponible.Checked = true;
+            this.rbDisponible.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbDisponible.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.rbDisponible.Location = new System.Drawing.Point(145, 119);
+            this.rbDisponible.Name = "rbDisponible";
+            this.rbDisponible.Size = new System.Drawing.Size(105, 22);
+            this.rbDisponible.TabIndex = 10;
+            this.rbDisponible.TabStop = true;
+            this.rbDisponible.Text = "Disponible";
+            this.rbDisponible.UseVisualStyleBackColor = true;
+            this.rbDisponible.CheckedChanged += new System.EventHandler(this.rbDisponible_CheckedChanged);
             // 
             // btIngresar
             // 
@@ -111,6 +144,13 @@
             this.txIngNom.Name = "txIngNom";
             this.txIngNom.Size = new System.Drawing.Size(247, 24);
             this.txIngNom.TabIndex = 5;
+            // 
+            // txIngCod
+            // 
+            this.txIngCod.Location = new System.Drawing.Point(145, 24);
+            this.txIngCod.Name = "txIngCod";
+            this.txIngCod.Size = new System.Drawing.Size(247, 24);
+            this.txIngCod.TabIndex = 4;
             // 
             // label4
             // 
@@ -162,12 +202,65 @@
             this.gbConsultar.Controls.Add(this.label9);
             this.gbConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbConsultar.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.gbConsultar.Location = new System.Drawing.Point(43, 234);
+            this.gbConsultar.Location = new System.Drawing.Point(43, 198);
             this.gbConsultar.Name = "gbConsultar";
             this.gbConsultar.Size = new System.Drawing.Size(743, 297);
             this.gbConsultar.TabIndex = 10;
             this.gbConsultar.TabStop = false;
             this.gbConsultar.Text = "Consultar Libro";
+            // 
+            // txBusDisp
+            // 
+            this.txBusDisp.Location = new System.Drawing.Point(145, 115);
+            this.txBusDisp.Name = "txBusDisp";
+            this.txBusDisp.Size = new System.Drawing.Size(247, 24);
+            this.txBusDisp.TabIndex = 15;
+            this.txBusDisp.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // btBusDis
+            // 
+            this.btBusDis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBusDis.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btBusDis.Location = new System.Drawing.Point(583, 189);
+            this.btBusDis.Name = "btBusDis";
+            this.btBusDis.Size = new System.Drawing.Size(160, 46);
+            this.btBusDis.TabIndex = 14;
+            this.btBusDis.Text = "Busqueda por Disponible";
+            this.btBusDis.UseVisualStyleBackColor = true;
+            this.btBusDis.Click += new System.EventHandler(this.txBusDis_Click);
+            // 
+            // btBusAu
+            // 
+            this.btBusAu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBusAu.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btBusAu.Location = new System.Drawing.Point(456, 88);
+            this.btBusAu.Name = "btBusAu";
+            this.btBusAu.Size = new System.Drawing.Size(210, 27);
+            this.btBusAu.TabIndex = 13;
+            this.btBusAu.Text = "Busqueda por Autor";
+            this.btBusAu.UseVisualStyleBackColor = true;
+            this.btBusAu.Click += new System.EventHandler(this.txBusAu_Click);
+            // 
+            // btBusNom
+            // 
+            this.btBusNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBusNom.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btBusNom.Location = new System.Drawing.Point(456, 55);
+            this.btBusNom.Name = "btBusNom";
+            this.btBusNom.Size = new System.Drawing.Size(210, 27);
+            this.btBusNom.TabIndex = 12;
+            this.btBusNom.Text = "Busqueda por Nombre";
+            this.btBusNom.UseVisualStyleBackColor = true;
+            this.btBusNom.Click += new System.EventHandler(this.txBusNom_Click);
+            // 
+            // txSalidaConsulta
+            // 
+            this.txSalidaConsulta.Location = new System.Drawing.Point(22, 157);
+            this.txSalidaConsulta.Multiline = true;
+            this.txSalidaConsulta.Name = "txSalidaConsulta";
+            this.txSalidaConsulta.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txSalidaConsulta.Size = new System.Drawing.Size(539, 134);
+            this.txSalidaConsulta.TabIndex = 10;
             // 
             // btBusqudaCod
             // 
@@ -246,96 +339,68 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Código";
             // 
-            // txSalidaConsulta
+            // groupBox1
             // 
-            this.txSalidaConsulta.Location = new System.Drawing.Point(22, 157);
-            this.txSalidaConsulta.Multiline = true;
-            this.txSalidaConsulta.Name = "txSalidaConsulta";
-            this.txSalidaConsulta.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txSalidaConsulta.Size = new System.Drawing.Size(539, 134);
-            this.txSalidaConsulta.TabIndex = 10;
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.txEliminar);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.groupBox1.Location = new System.Drawing.Point(43, 501);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(743, 112);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Eliminar libro";
             // 
-            // btBusNom
+            // button1
             // 
-            this.btBusNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBusNom.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btBusNom.Location = new System.Drawing.Point(456, 55);
-            this.btBusNom.Name = "btBusNom";
-            this.btBusNom.Size = new System.Drawing.Size(210, 27);
-            this.btBusNom.TabIndex = 12;
-            this.btBusNom.Text = "Busqueda por Nombre";
-            this.btBusNom.UseVisualStyleBackColor = true;
-            this.btBusNom.Click += new System.EventHandler(this.txBusNom_Click);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.button1.Location = new System.Drawing.Point(545, 65);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(157, 36);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Eliminar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // btBusAu
+            // txEliminar
             // 
-            this.btBusAu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBusAu.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btBusAu.Location = new System.Drawing.Point(456, 88);
-            this.btBusAu.Name = "btBusAu";
-            this.btBusAu.Size = new System.Drawing.Size(210, 27);
-            this.btBusAu.TabIndex = 13;
-            this.btBusAu.Text = "Busqueda por Autor";
-            this.btBusAu.UseVisualStyleBackColor = true;
-            this.btBusAu.Click += new System.EventHandler(this.txBusAu_Click);
+            this.txEliminar.Location = new System.Drawing.Point(145, 71);
+            this.txEliminar.Name = "txEliminar";
+            this.txEliminar.Size = new System.Drawing.Size(247, 24);
+            this.txEliminar.TabIndex = 4;
             // 
-            // btBusDis
+            // label11
             // 
-            this.btBusDis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBusDis.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btBusDis.Location = new System.Drawing.Point(583, 189);
-            this.btBusDis.Name = "btBusDis";
-            this.btBusDis.Size = new System.Drawing.Size(160, 46);
-            this.btBusDis.TabIndex = 14;
-            this.btBusDis.Text = "Busqueda por Disponible";
-            this.btBusDis.UseVisualStyleBackColor = true;
-            this.btBusDis.Click += new System.EventHandler(this.txBusDis_Click);
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label11.Location = new System.Drawing.Point(19, 74);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(62, 18);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Código";
             // 
-            // txBusDisp
+            // label10
             // 
-            this.txBusDisp.Location = new System.Drawing.Point(145, 115);
-            this.txBusDisp.Name = "txBusDisp";
-            this.txBusDisp.Size = new System.Drawing.Size(247, 24);
-            this.txBusDisp.TabIndex = 15;
-            this.txBusDisp.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // rbDisponible
-            // 
-            this.rbDisponible.AutoSize = true;
-            this.rbDisponible.Checked = true;
-            this.rbDisponible.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDisponible.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.rbDisponible.Location = new System.Drawing.Point(145, 119);
-            this.rbDisponible.Name = "rbDisponible";
-            this.rbDisponible.Size = new System.Drawing.Size(105, 22);
-            this.rbDisponible.TabIndex = 10;
-            this.rbDisponible.Text = "Disponible";
-            this.rbDisponible.UseVisualStyleBackColor = true;
-            // 
-            // rbNoDisp
-            // 
-            this.rbNoDisp.AutoSize = true;
-            this.rbNoDisp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbNoDisp.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.rbNoDisp.Location = new System.Drawing.Point(278, 117);
-            this.rbNoDisp.Name = "rbNoDisp";
-            this.rbNoDisp.Size = new System.Drawing.Size(132, 22);
-            this.rbNoDisp.TabIndex = 11;
-            this.rbNoDisp.Text = "No Disponible";
-            this.rbNoDisp.UseVisualStyleBackColor = true;
-            // 
-            // txIngCod
-            // 
-            this.txIngCod.Location = new System.Drawing.Point(145, 24);
-            this.txIngCod.Name = "txIngCod";
-            this.txIngCod.Size = new System.Drawing.Size(247, 24);
-            this.txIngCod.TabIndex = 4;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label10.Location = new System.Drawing.Point(196, 30);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(295, 18);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Ingrese El Código Del Libro a Eliminar";
             // 
             // Vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 570);
+            this.ClientSize = new System.Drawing.Size(835, 672);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbConsultar);
             this.Controls.Add(this.gbIngresar);
             this.Controls.Add(this.label1);
@@ -346,6 +411,8 @@
             this.gbIngresar.PerformLayout();
             this.gbConsultar.ResumeLayout(false);
             this.gbConsultar.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,5 +445,10 @@
         private System.Windows.Forms.RadioButton rbNoDisp;
         private System.Windows.Forms.RadioButton rbDisponible;
         private System.Windows.Forms.TextBox txIngCod;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txEliminar;
+        private System.Windows.Forms.Label label11;
     }
 }

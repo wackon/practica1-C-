@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +15,7 @@ namespace Practica1
     public partial class Vista : Form
     {
 
-        
+
         Books objB;
         Books[] vector = new Books[3];
         int contador = 0;
@@ -27,41 +28,55 @@ namespace Practica1
 
         private void btIngresar_Click(object sender, EventArgs e)
         {
-            
-           
 
-            if (string.IsNullOrEmpty(txIngCod.Text) || string.IsNullOrEmpty(txIngNom.Text) || string.IsNullOrEmpty(txIngAut.Text)) {
-
-                MessageBox.Show("Digite todos los campos");
-            }
-            else { 
-
-                string Codigo = txIngCod.Text;
-                string Nombre = txIngNom.Text;
-                string Autor = txIngAut.Text;
-               
+            try
+            {
 
 
-                if(rbDisponible.Checked == true)
+                if (string.IsNullOrEmpty(txIngCod.Text) || string.IsNullOrEmpty(txIngNom.Text) || string.IsNullOrEmpty(txIngAut.Text))
                 {
-                    Disponible = true;
-                }else { 
-                    Disponible = false;
-                } 
-                                
 
-                vector[contador] =  new Books(Codigo, Nombre, Autor, Disponible);
+                    MessageBox.Show("Digite todos los campos");
+                }
+                else
+                {
+
+                    string Codigo = txIngCod.Text;
+                    string Nombre = txIngNom.Text;
+                    string Autor = txIngAut.Text;
 
 
-                contador = contador + 1;
 
-                txIngCod.Text = "";
-                txIngNom.Text = "";
-                txIngAut.Text = "";
+                    if (rbDisponible.Checked == true)
+                    {
+                        Disponible = true;
+                    }
+                    else
+                    {
+                        Disponible = false;
+                    }
+
+
+                    vector[contador] = new Books(Codigo, Nombre, Autor, Disponible);
+
+
+
+
+                    txIngCod.Text = "";
+                    txIngNom.Text = "";
+                    txIngAut.Text = "";
+                    contador += 1;
+                }
+
             }
-            
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception caught.", ex);
+            }
         }
-        
+
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -77,25 +92,29 @@ namespace Practica1
 
                 System.Windows.Forms.MessageBox.Show("Ingrese un valor para la busqueda");
 
-            }else{   string cod = txBusCod.Text;
-            
+            }
+            else
+            {
+                string cod = txBusCod.Text;
 
-                for (int i=0;i <vector.Length; i++)
+
+                for (int i = 0; i < vector.Length; i++)
 
                 {
-                    if (cod == vector[i].getCodigo()) {
+                    if (cod == vector[i].getCodigo())
+                    {
 
-                        txBusNombre.Text= vector[i].getNombre();
+                        txBusNombre.Text = vector[i].getNombre();
                         txBusAut.Text = vector[i].getAutor();
                         txBusDisp.Text = Convert.ToString(vector[i].getDisponible());
 
 
                     }
-                       
+
                 }
             }
 
-             
+
 
             /* foreach (Books vec in vector)
              {
@@ -112,10 +131,10 @@ namespace Practica1
             */
 
 
-           
+
         }
 
-       
+
 
         private void txBusNom_Click(object sender, EventArgs e)
         {
@@ -180,26 +199,26 @@ namespace Practica1
         private void txBusDis_Click(object sender, EventArgs e)
         {
             string salida = "";
-            
-            
-              for (int i = 0; i < vector.Length; i++)
 
+
+            for (int i = 0; i < vector.Length; i++)
+
+            {
+                if ("True" == Convert.ToString(vector[i].getDisponible()))
                 {
-                    if (true == vector[i].getDisponible())
-                    {
 
-                      
-                        salida = "Los libros disponibles en la actualidad son : \r\n"+
-                        "Codigo : " +vector[i].getCodigo()+ "\r\n"+
-                        "Nombre : "+ vector[i].getNombre() + "\r\n" +
-                        "Autor : " + vector[i].getAutor() + "\r\n\r\n";
 
-                        salida += salida;
-                          
+                    salida += "Los libros disponibles en la actualidad son : \r\n" +
+                    "Codigo : " + vector[i].getCodigo() + "\r\n" +
+                    "Nombre : " + vector[i].getNombre() + "\r\n" +
+                    "Autor : " + vector[i].getAutor() + "\r\n\r\n";
+
+
+
 
                 }
 
-              }
+            }
             txSalidaConsulta.Text = salida;
         }
 
@@ -212,7 +231,47 @@ namespace Practica1
         {
 
         }
+
+        private void rbDisponible_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txEliminar.Text))
+            {
+                System.Windows.Forms.MessageBox.Show("Ingrese el código del libro a eliminar");
+
+            }
+            else 
+            {
+
+                string cod = txEliminar.Text;
+
+                for (int i = 0; i < vector.Length; i++)
+                {
+                    
+
+                    if (cod == vector[i].getCodigo())
+                    {
+
+                        for (int j = i; j < vector.Length - 1; j++)
+                        {
+
+
+                            vector[j] = vector[j + 1];
+                            MessageBox.Show("el elemento ha sido borrado");
+                        }
+                    }
+                   
+
+                }
+               
+            }
+            
+        }
     }
-    }
-    
+}
+
 

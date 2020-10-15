@@ -20,6 +20,7 @@ namespace Practica1
             this.Nombre = Nombre;
             this.Autor = Autor ;
             this.Disponible= Disponible;
+
         }
 
 
