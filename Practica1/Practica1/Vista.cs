@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -251,27 +252,96 @@ namespace Practica1
 
                 for (int i = 0; i < vector.Length; i++)
                 {
-                    
-
-                    if (cod == vector[i].getCodigo())
+                    try
                     {
 
-                        for (int j = i; j < vector.Length - 1; j++)
+                        if (cod == vector[i].getCodigo())
                         {
+                            contador -= 1;
 
+                            for (int j = i; j < vector.Length - 1; j++)
+                            {
 
-                            vector[j] = vector[j + 1];
-                            MessageBox.Show("el elemento ha sido borrado");
+                                
+                                vector[j] = vector[j + 1];
+                                MessageBox.Show("el elemento ha sido borrado");
+                            }
+
                         }
                     }
-                   
+                    catch (IOException ex)
+                    { 
 
+                    }
+                    
                 }
                
             }
             
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txPrestar.Text))
+            {
+                System.Windows.Forms.MessageBox.Show("Ingrese el código del libro a Entregar");
+
+            }
+            else
+            {
+
+                string cod = txPrestar.Text;
+
+                for (int i = 0; i < vector.Length; i++)
+                {
+                    
+
+                        if (cod == vector[i].getCodigo())
+                        {
+                            vector[i].setDisponible(false);
+                             
+                        }
+                    
+                    }
+                txPrestar.Text = "";
+            }
+
+            }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txEntregar.Text))
+            {
+                System.Windows.Forms.MessageBox.Show("Ingrese el código del libro a Entregar");
+
+            }
+            else
+            {
+
+                string cod = txEntregar.Text;
+
+                for (int i = 0; i < vector.Length; i++)
+                {
+
+
+                    if (cod == vector[i].getCodigo())
+                    {
+                        vector[i].setDisponible(true);
+
+                    }
+
+                }
+                 txEntregar.Text = "";
+
+            }
+        }
+
+        private void txEntregar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
-}
+    }
+
 
 

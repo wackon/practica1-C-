@@ -54,13 +54,20 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.txEliminar = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txEntregar = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txPrestar = new System.Windows.Forms.TextBox();
             this.gbIngresar.SuspendLayout();
             this.gbConsultar.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -123,7 +130,7 @@
             // 
             this.btIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btIngresar.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btIngresar.Location = new System.Drawing.Point(498, 24);
+            this.btIngresar.Location = new System.Drawing.Point(484, 24);
             this.btIngresar.Name = "btIngresar";
             this.btIngresar.Size = new System.Drawing.Size(157, 36);
             this.btIngresar.TabIndex = 8;
@@ -204,7 +211,7 @@
             this.gbConsultar.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.gbConsultar.Location = new System.Drawing.Point(43, 198);
             this.gbConsultar.Name = "gbConsultar";
-            this.gbConsultar.Size = new System.Drawing.Size(743, 297);
+            this.gbConsultar.Size = new System.Drawing.Size(743, 266);
             this.gbConsultar.TabIndex = 10;
             this.gbConsultar.TabStop = false;
             this.gbConsultar.Text = "Consultar Libro";
@@ -221,7 +228,7 @@
             // 
             this.btBusDis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btBusDis.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btBusDis.Location = new System.Drawing.Point(583, 189);
+            this.btBusDis.Location = new System.Drawing.Point(562, 157);
             this.btBusDis.Name = "btBusDis";
             this.btBusDis.Size = new System.Drawing.Size(160, 46);
             this.btBusDis.TabIndex = 14;
@@ -233,7 +240,7 @@
             // 
             this.btBusAu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btBusAu.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btBusAu.Location = new System.Drawing.Point(456, 88);
+            this.btBusAu.Location = new System.Drawing.Point(431, 88);
             this.btBusAu.Name = "btBusAu";
             this.btBusAu.Size = new System.Drawing.Size(210, 27);
             this.btBusAu.TabIndex = 13;
@@ -245,7 +252,7 @@
             // 
             this.btBusNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btBusNom.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btBusNom.Location = new System.Drawing.Point(456, 55);
+            this.btBusNom.Location = new System.Drawing.Point(431, 55);
             this.btBusNom.Name = "btBusNom";
             this.btBusNom.Size = new System.Drawing.Size(210, 27);
             this.btBusNom.TabIndex = 12;
@@ -259,14 +266,14 @@
             this.txSalidaConsulta.Multiline = true;
             this.txSalidaConsulta.Name = "txSalidaConsulta";
             this.txSalidaConsulta.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txSalidaConsulta.Size = new System.Drawing.Size(539, 134);
+            this.txSalidaConsulta.Size = new System.Drawing.Size(534, 101);
             this.txSalidaConsulta.TabIndex = 10;
             // 
             // btBusqudaCod
             // 
             this.btBusqudaCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btBusqudaCod.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btBusqudaCod.Location = new System.Drawing.Point(456, 23);
+            this.btBusqudaCod.Location = new System.Drawing.Point(431, 24);
             this.btBusqudaCod.Name = "btBusqudaCod";
             this.btBusqudaCod.Size = new System.Drawing.Size(210, 25);
             this.btBusqudaCod.TabIndex = 8;
@@ -347,12 +354,23 @@
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox1.Location = new System.Drawing.Point(43, 501);
+            this.groupBox1.Location = new System.Drawing.Point(43, 462);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(743, 112);
+            this.groupBox1.Size = new System.Drawing.Size(743, 103);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Eliminar libro";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label10.Location = new System.Drawing.Point(196, 30);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(295, 18);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Ingrese El Código Del Libro a Eliminar";
             // 
             // button1
             // 
@@ -384,22 +402,78 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Código";
             // 
-            // label10
+            // groupBox2
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label10.Location = new System.Drawing.Point(196, 30);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(295, 18);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Ingrese El Código Del Libro a Eliminar";
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.txEntregar);
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.txPrestar);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.groupBox2.Location = new System.Drawing.Point(43, 571);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(743, 99);
+            this.groupBox2.TabIndex = 12;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Prestar y Entregar Libro";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label12.Location = new System.Drawing.Point(196, 16);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(286, 18);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Ingrese El Código Del Libro a Operar";
+            // 
+            // txEntregar
+            // 
+            this.txEntregar.Location = new System.Drawing.Point(464, 68);
+            this.txEntregar.Name = "txEntregar";
+            this.txEntregar.Size = new System.Drawing.Size(177, 24);
+            this.txEntregar.TabIndex = 8;
+            this.txEntregar.TextChanged += new System.EventHandler(this.txEntregar_TextChanged);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.button3.Location = new System.Drawing.Point(335, 64);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 25);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Entregar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.button2.Location = new System.Drawing.Point(12, 63);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Prestar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txPrestar
+            // 
+            this.txPrestar.Location = new System.Drawing.Point(103, 66);
+            this.txPrestar.Name = "txPrestar";
+            this.txPrestar.Size = new System.Drawing.Size(177, 24);
+            this.txPrestar.TabIndex = 5;
             // 
             // Vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 672);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbConsultar);
             this.Controls.Add(this.gbIngresar);
@@ -413,6 +487,8 @@
             this.gbConsultar.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -450,5 +526,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txEliminar;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txEntregar;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txPrestar;
     }
 }
