@@ -112,20 +112,7 @@ namespace Practica1
             */
 
 
-            /*txSalidaConsulta.Text = Convert.ToString(objB.getCodigo()) + "\r\n" +
-                       "Nombre : " + Convert.ToString(objB.getNombre()) + "\r\n" +
-                       "Autor : " + Convert.ToString(objB.getAutor()) + "\r\n" +
-                       "Disponible : " + Convert.ToString(objB.getDisponible());
-
-              for (int i =0; i<= contador; i++)
-              {
-                  txSalidaConsulta.Text = txSalidaConsulta.Text + txSalidaConsulta.Text;
-              }
-
-              txSalidaConsulta.Text = Convert.ToString(objB.getCodigo()) + "\r\n" +
-                      "Nombre : " + Convert.ToString(objB.getNombre()) + "\r\n" +
-                      "Autor : " + Convert.ToString(objB.getAutor()) + "\r\n" +
-                      "Disponible : " + Convert.ToString(objB.getDisponible());*/
+           
         }
 
        

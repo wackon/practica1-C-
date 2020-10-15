@@ -35,6 +35,9 @@
             this.btCalcular = new System.Windows.Forms.Button();
             this.btSalir = new System.Windows.Forms.Button();
             this.gbResultado = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txSaldo = new System.Windows.Forms.TextBox();
+            this.btIngresar = new System.Windows.Forms.Button();
             this.gbResultado.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +81,7 @@
             // 
             // btCalcular
             // 
+            this.btCalcular.Enabled = false;
             this.btCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCalcular.Location = new System.Drawing.Point(338, 61);
             this.btCalcular.Name = "btCalcular";
@@ -110,11 +114,42 @@
             this.gbResultado.TabStop = false;
             this.gbResultado.Text = "Resultado";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(16, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(182, 18);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Ingrese su saldo actual";
+            // 
+            // txSaldo
+            // 
+            this.txSaldo.Location = new System.Drawing.Point(213, 18);
+            this.txSaldo.Name = "txSaldo";
+            this.txSaldo.Size = new System.Drawing.Size(100, 20);
+            this.txSaldo.TabIndex = 10;
+            // 
+            // btIngresar
+            // 
+            this.btIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btIngresar.Location = new System.Drawing.Point(338, 17);
+            this.btIngresar.Name = "btIngresar";
+            this.btIngresar.Size = new System.Drawing.Size(75, 23);
+            this.btIngresar.TabIndex = 11;
+            this.btIngresar.Text = "Ingresar";
+            this.btIngresar.UseVisualStyleBackColor = true;
+            this.btIngresar.Click += new System.EventHandler(this.btIngresar_Click);
+            // 
             // Maquina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(431, 315);
+            this.Controls.Add(this.btIngresar);
+            this.Controls.Add(this.txSaldo);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.gbResultado);
             this.Controls.Add(this.btCalcular);
             this.Controls.Add(this.label2);
@@ -138,5 +173,8 @@
         private System.Windows.Forms.Button btCalcular;
         private System.Windows.Forms.Button btSalir;
         private System.Windows.Forms.GroupBox gbResultado;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txSaldo;
+        private System.Windows.Forms.Button btIngresar;
     }
 }
