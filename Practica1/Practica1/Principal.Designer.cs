@@ -113,6 +113,7 @@
             this.empresaDeViajesToolStripMenuItem.Name = "empresaDeViajesToolStripMenuItem";
             this.empresaDeViajesToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.empresaDeViajesToolStripMenuItem.Text = "Empresa De Viajes";
+            this.empresaDeViajesToolStripMenuItem.Click += new System.EventHandler(this.empresaDeViajesToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 

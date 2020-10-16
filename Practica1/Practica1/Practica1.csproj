@@ -47,6 +47,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Biblioteca\Books.cs" />
+    <Compile Include="Empresa\Avion.cs" />
+    <Compile Include="Empresa\Barco.cs" />
+    <Compile Include="Empresa\Herencia.cs" />
+    <Compile Include="Tours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tours.Designer.cs">
+      <DependentUpon>Tours.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +82,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Tours.resx">
+      <DependentUpon>Tours.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista.resx">
       <DependentUpon>Vista.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,5 +129,6 @@
   <ItemGroup>
     <None Include="Resources\238870.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

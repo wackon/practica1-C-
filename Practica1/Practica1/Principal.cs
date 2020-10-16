@@ -56,5 +56,12 @@ namespace Practica1
         {
 
         }
+
+        private void empresaDeViajesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Tours objTour = new Tours();
+            objTour.MdiParent = this;
+            objTour.Show();
+        }
     }
 }

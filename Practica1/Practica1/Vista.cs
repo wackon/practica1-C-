@@ -259,13 +259,14 @@ namespace Practica1
                         {
                             contador -= 1;
 
-                            for (int j = i; j < vector.Length - 1; j++)
+                            for (int j = i; j < vector.Length - 1; j++)//revisar para 3
                             {
 
 
                                 vector[j] = vector[j + 1];
                                 MessageBox.Show("el elemento ha sido borrado");
-                            }
+                                
+                            }//revisar para 3
 
                         }
                     }

@@ -23,3 +23,4 @@ C:\Users\wackon\Desktop\Semestre 5\Dllo de Software Empresarial\Practica1\Practi
 C:\Users\wackon\Desktop\Semestre 5\Dllo de Software Empresarial\Practica1\Practica1\Practica1\obj\Debug\Practica1.csproj.CoreCompileInputs.cache
 C:\Users\wackon\Desktop\Semestre 5\Dllo de Software Empresarial\Practica1\Practica1\Practica1\obj\Debug\Practica1.exe
 C:\Users\wackon\Desktop\Semestre 5\Dllo de Software Empresarial\Practica1\Practica1\Practica1\obj\Debug\Practica1.pdb
+C:\Users\wackon\Desktop\Semestre 5\Dllo de Software Empresarial\Practica1\Practica1\Practica1\obj\Debug\Practica1.Tours.resources
