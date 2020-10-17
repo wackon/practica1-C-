@@ -8,13 +8,13 @@ namespace Practica1.Empresa
 {
     class Barco : Herencia
     {
-        double valorDias = 0;
+        int diasViaje = 0;
         double ValTranspAMuelle =0;
 
-        public Barco(string destino, string nombre, string cedula, int diasViaje, int diasEsta, string tCamarote, string tHabitacion, string fechaViaje, double valorTransporte,
-           int millas, double valorDias, double ValTranspAMuelle) : base(destino, nombre, cedula, diasViaje, diasEsta, tCamarote, tHabitacion, fechaViaje, valorTransporte,millas)
+        public Barco(string destino, string nombre, double cedula,  int diasEsta, string tCamarote, string tHabitacion, string fechaViaje, double valorTransporte,
+           int millas, double valorDias, double ValTranspAMuelle,int diasViaje) : base(destino, nombre, cedula,  diasEsta, tCamarote, tHabitacion, fechaViaje, valorTransporte,millas)
         {
-            this.valorDias = valorDias;
+            this.diasViaje = diasViaje;
             this.ValTranspAMuelle = ValTranspAMuelle;
         }
 
@@ -22,19 +22,20 @@ namespace Practica1.Empresa
         {
         }
 
+        
 
 
         #region GETTER AND SETTERS
-        public void setValorDias(double valorDias)
+      public void setDiasViaje(int diasViaje)
         {
-            this.valorDias = valorDias;
+            this.diasViaje = diasViaje;
         }
 
-        public double getValorDias()
+        public int getDiasViaje()
         {
-            return valorDias;
+            return diasViaje;
         }
-
+       
         public void setValTranspAMuelle(double ValTranspAMuelle)
         {
             this.ValTranspAMuelle = ValTranspAMuelle;

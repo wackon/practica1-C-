@@ -8,13 +8,13 @@ namespace Practica1.Empresa
 {
     class Avion : Herencia
     {
-        int Millas = 0;
+        
         double ValMillas = 0;
         double ValTasaAer = 0;
         double ValTranspAero=0;
 
-        public Avion(string destino, string nombre, string cedula, int diasViaje, int diasEsta, string tCamarote, string tHabitacion,string fechaViaje, double valorTransporte,
-            int millas, double valMillas, double valTasaAer, double valTranspAero) : base(destino, nombre, cedula, diasViaje, diasEsta, tCamarote, tHabitacion, fechaViaje, valorTransporte,millas)
+        public Avion(string destino, string nombre, double cedula, int diasViaje, int diasEsta, string tCamarote, string tHabitacion,string fechaViaje, double valorTransporte,
+            int millas, double valMillas, double valTasaAer, double valTranspAero) : base(destino, nombre, cedula, diasEsta, tCamarote, tHabitacion, fechaViaje, valorTransporte,millas)
 
         {
 
@@ -26,20 +26,29 @@ namespace Practica1.Empresa
 
         public Avion()
         {
+
+
         }
-
-
 
         #region GETTER AND SETTERS
-        /*public void setMillas(int millas)
+
+        public double setValTasaAer(double valTasaAer)
         {
-            this.Millas = millas;
+            return valTasaAer;
+        }
+        public double getValTasaAer()
+        {
+            return ValTasaAer;
         }
 
-        public int getMillas()
+
+        public double gerValorTransporteAereo() { 
+            return ValTranspAero;
+        }
+        public void setValTranspAero(double valTranspAero)
         {
-            return Millas;
-        }*/
+            this.ValTranspAero = valTranspAero;
+        }
 
 
         public void setValMillas(double valMillas)
@@ -52,26 +61,8 @@ namespace Practica1.Empresa
             return ValMillas;
         }
 
-        public void setValTasaAer(double valTasaAer)
-        {
-            this.ValMillas = valTasaAer;
-        }
 
-        public double getValTasaAer()
-        {
-            return ValTasaAer;
-        }
-        public void setValTranspAero(double valTranspAero)
-        {
-            this.ValTranspAero = valTranspAero;
-        }
-
-        public double getValTranspAero()
-        {
-            return ValTranspAero;
-        }
-
-        #endregion
+#endregion   
     }
 
 

@@ -41,11 +41,10 @@
             this.txNom = new System.Windows.Forms.TextBox();
             this.gbInfo = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.txDest = new System.Windows.Forms.TextBox();
-            this.txDestino = new System.Windows.Forms.Label();
             this.txCed = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.gbFecha = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.txDiasDViaje = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,6 +54,8 @@
             this.txTransMu = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.gbTransAv = new System.Windows.Forms.GroupBox();
+            this.txMillasCliente = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.txTransAe = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -62,16 +63,21 @@
             this.txValMil = new System.Windows.Forms.TextBox();
             this.txValMillas = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txMillasCliente = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.txSalidaFinal = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbbarco = new System.Windows.Forms.RadioButton();
+            this.rbAvion = new System.Windows.Forms.RadioButton();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txDestino = new System.Windows.Forms.Label();
+            this.txDest = new System.Windows.Forms.TextBox();
             this.gbTipoCama.SuspendLayout();
             this.gbTipoHab.SuspendLayout();
             this.gbInfo.SuspendLayout();
             this.gbFecha.SuspendLayout();
             this.gbTranspB.SuspendLayout();
             this.gbTransAv.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -92,9 +98,9 @@
             this.gbTipoCama.Controls.Add(this.rbLujo);
             this.gbTipoCama.Controls.Add(this.label1);
             this.gbTipoCama.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.gbTipoCama.Location = new System.Drawing.Point(12, 206);
+            this.gbTipoCama.Location = new System.Drawing.Point(12, 246);
             this.gbTipoCama.Name = "gbTipoCama";
-            this.gbTipoCama.Size = new System.Drawing.Size(479, 64);
+            this.gbTipoCama.Size = new System.Drawing.Size(543, 64);
             this.gbTipoCama.TabIndex = 1;
             this.gbTipoCama.TabStop = false;
             this.gbTipoCama.Text = "Tipo de Camarote";
@@ -140,10 +146,11 @@
             this.gbTipoHab.Controls.Add(this.rbHabNorm);
             this.gbTipoHab.Controls.Add(this.rbSuite);
             this.gbTipoHab.Controls.Add(this.label2);
+            this.gbTipoHab.Enabled = false;
             this.gbTipoHab.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.gbTipoHab.Location = new System.Drawing.Point(12, 270);
+            this.gbTipoHab.Location = new System.Drawing.Point(12, 316);
             this.gbTipoHab.Name = "gbTipoHab";
-            this.gbTipoHab.Size = new System.Drawing.Size(479, 61);
+            this.gbTipoHab.Size = new System.Drawing.Size(543, 61);
             this.gbTipoHab.TabIndex = 2;
             this.gbTipoHab.TabStop = false;
             this.gbTipoHab.Text = "Tipo de Habitación";
@@ -187,7 +194,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label3.Location = new System.Drawing.Point(33, 28);
+            this.label3.Location = new System.Drawing.Point(22, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 16);
             this.label3.TabIndex = 3;
@@ -195,24 +202,25 @@
             // 
             // txNom
             // 
-            this.txNom.Location = new System.Drawing.Point(124, 22);
+            this.txNom.Location = new System.Drawing.Point(113, 21);
             this.txNom.Name = "txNom";
-            this.txNom.Size = new System.Drawing.Size(325, 22);
+            this.txNom.Size = new System.Drawing.Size(258, 22);
             this.txNom.TabIndex = 4;
             // 
             // gbInfo
             // 
-            this.gbInfo.Controls.Add(this.button1);
             this.gbInfo.Controls.Add(this.txDest);
+            this.gbInfo.Controls.Add(this.button1);
             this.gbInfo.Controls.Add(this.txDestino);
             this.gbInfo.Controls.Add(this.txCed);
             this.gbInfo.Controls.Add(this.label4);
             this.gbInfo.Controls.Add(this.txNom);
             this.gbInfo.Controls.Add(this.label3);
+            this.gbInfo.Enabled = false;
             this.gbInfo.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.gbInfo.Location = new System.Drawing.Point(12, 36);
+            this.gbInfo.Location = new System.Drawing.Point(11, 82);
             this.gbInfo.Name = "gbInfo";
-            this.gbInfo.Size = new System.Drawing.Size(479, 164);
+            this.gbInfo.Size = new System.Drawing.Size(544, 147);
             this.gbInfo.TabIndex = 5;
             this.gbInfo.TabStop = false;
             this.gbInfo.Text = "Informacion del Cliente";
@@ -220,34 +228,17 @@
             // button1
             // 
             this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Location = new System.Drawing.Point(317, 57);
+            this.button1.Location = new System.Drawing.Point(400, 18);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 55);
+            this.button1.Size = new System.Drawing.Size(132, 54);
             this.button1.TabIndex = 9;
             this.button1.Text = "Calcular Costo";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txDest
-            // 
-            this.txDest.Location = new System.Drawing.Point(124, 90);
-            this.txDest.Name = "txDest";
-            this.txDest.Size = new System.Drawing.Size(176, 22);
-            this.txDest.TabIndex = 8;
-            // 
-            // txDestino
-            // 
-            this.txDestino.AutoSize = true;
-            this.txDestino.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txDestino.Location = new System.Drawing.Point(33, 85);
-            this.txDestino.Name = "txDestino";
-            this.txDestino.Size = new System.Drawing.Size(73, 16);
-            this.txDestino.TabIndex = 7;
-            this.txDestino.Text = "Destino : ";
-            // 
             // txCed
             // 
-            this.txCed.Location = new System.Drawing.Point(124, 54);
+            this.txCed.Location = new System.Drawing.Point(113, 53);
             this.txCed.Name = "txCed";
             this.txCed.Size = new System.Drawing.Size(176, 22);
             this.txCed.TabIndex = 6;
@@ -256,7 +247,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label4.Location = new System.Drawing.Point(33, 57);
+            this.label4.Location = new System.Drawing.Point(22, 56);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 16);
             this.label4.TabIndex = 5;
@@ -271,12 +262,20 @@
             this.gbFecha.Controls.Add(this.label5);
             this.gbFecha.Controls.Add(this.txDiasEstadia);
             this.gbFecha.Controls.Add(this.label6);
-            this.gbFecha.Location = new System.Drawing.Point(511, 36);
+            this.gbFecha.Enabled = false;
+            this.gbFecha.Location = new System.Drawing.Point(561, 36);
             this.gbFecha.Name = "gbFecha";
-            this.gbFecha.Size = new System.Drawing.Size(537, 193);
+            this.gbFecha.Size = new System.Drawing.Size(487, 193);
             this.gbFecha.TabIndex = 6;
             this.gbFecha.TabStop = false;
             this.gbFecha.Text = "Fecha";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(268, 52);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 12;
             // 
             // label7
             // 
@@ -289,6 +288,7 @@
             // 
             // txDiasDViaje
             // 
+            this.txDiasDViaje.Enabled = false;
             this.txDiasDViaje.Location = new System.Drawing.Point(269, 122);
             this.txDiasDViaje.Name = "txDiasDViaje";
             this.txDiasDViaje.Size = new System.Drawing.Size(199, 22);
@@ -323,10 +323,11 @@
             // 
             this.gbTranspB.Controls.Add(this.txTransMu);
             this.gbTranspB.Controls.Add(this.label9);
+            this.gbTranspB.Enabled = false;
             this.gbTranspB.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.gbTranspB.Location = new System.Drawing.Point(511, 414);
+            this.gbTranspB.Location = new System.Drawing.Point(561, 414);
             this.gbTranspB.Name = "gbTranspB";
-            this.gbTranspB.Size = new System.Drawing.Size(537, 59);
+            this.gbTranspB.Size = new System.Drawing.Size(487, 59);
             this.gbTranspB.TabIndex = 7;
             this.gbTranspB.TabStop = false;
             this.gbTranspB.Text = "Transporte para Barco";
@@ -358,13 +359,31 @@
             this.gbTransAv.Controls.Add(this.txTasaAero);
             this.gbTransAv.Controls.Add(this.txValMil);
             this.gbTransAv.Controls.Add(this.txValMillas);
+            this.gbTransAv.Enabled = false;
             this.gbTransAv.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.gbTransAv.Location = new System.Drawing.Point(511, 240);
+            this.gbTransAv.Location = new System.Drawing.Point(561, 240);
             this.gbTransAv.Name = "gbTransAv";
-            this.gbTransAv.Size = new System.Drawing.Size(537, 168);
+            this.gbTransAv.Size = new System.Drawing.Size(487, 168);
             this.gbTransAv.TabIndex = 8;
             this.gbTransAv.TabStop = false;
             this.gbTransAv.Text = "Transporte para Avion";
+            // 
+            // txMillasCliente
+            // 
+            this.txMillasCliente.Location = new System.Drawing.Point(269, 24);
+            this.txMillasCliente.Name = "txMillasCliente";
+            this.txMillasCliente.Size = new System.Drawing.Size(199, 22);
+            this.txMillasCliente.TabIndex = 13;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label12.Location = new System.Drawing.Point(18, 30);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(139, 16);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "Distancia en Millas";
             // 
             // txTransAe
             // 
@@ -421,50 +440,99 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(419, 13);
+            this.label8.Location = new System.Drawing.Point(421, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(144, 21);
             this.label8.TabIndex = 9;
             this.label8.Text = "Empresa Turistica";
             // 
-            // textBox1
+            // txSalidaFinal
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 341);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(477, 131);
-            this.textBox1.TabIndex = 10;
+            this.txSalidaFinal.Enabled = false;
+            this.txSalidaFinal.Location = new System.Drawing.Point(13, 383);
+            this.txSalidaFinal.Multiline = true;
+            this.txSalidaFinal.Name = "txSalidaFinal";
+            this.txSalidaFinal.ReadOnly = true;
+            this.txSalidaFinal.Size = new System.Drawing.Size(542, 89);
+            this.txSalidaFinal.TabIndex = 10;
             // 
-            // dateTimePicker1
+            // label13
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(268, 52);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 12;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 18);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(198, 16);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "Desea realizar el viaje en : ";
             // 
-            // txMillasCliente
+            // groupBox1
             // 
-            this.txMillasCliente.Location = new System.Drawing.Point(269, 24);
-            this.txMillasCliente.Name = "txMillasCliente";
-            this.txMillasCliente.Size = new System.Drawing.Size(199, 22);
-            this.txMillasCliente.TabIndex = 13;
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.rbAvion);
+            this.groupBox1.Controls.Add(this.rbbarco);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Location = new System.Drawing.Point(13, 36);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(542, 40);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
             // 
-            // label12
+            // rbbarco
             // 
-            this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label12.Location = new System.Drawing.Point(18, 30);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(224, 16);
-            this.label12.TabIndex = 12;
-            this.label12.Text = "Millas Acumuladas del Cliente :";
+            this.rbbarco.AutoSize = true;
+            this.rbbarco.Location = new System.Drawing.Point(211, 16);
+            this.rbbarco.Name = "rbbarco";
+            this.rbbarco.Size = new System.Drawing.Size(67, 20);
+            this.rbbarco.TabIndex = 11;
+            this.rbbarco.Text = "Barco";
+            this.rbbarco.UseVisualStyleBackColor = true;
+            // 
+            // rbAvion
+            // 
+            this.rbAvion.AutoSize = true;
+            this.rbAvion.Checked = true;
+            this.rbAvion.Location = new System.Drawing.Point(304, 14);
+            this.rbAvion.Name = "rbAvion";
+            this.rbAvion.Size = new System.Drawing.Size(65, 20);
+            this.rbAvion.TabIndex = 12;
+            this.rbAvion.TabStop = true;
+            this.rbAvion.Text = "Avion";
+            this.rbAvion.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(398, 11);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(103, 23);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Enviar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txDestino
+            // 
+            this.txDestino.AutoSize = true;
+            this.txDestino.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.txDestino.Location = new System.Drawing.Point(22, 84);
+            this.txDestino.Name = "txDestino";
+            this.txDestino.Size = new System.Drawing.Size(73, 16);
+            this.txDestino.TabIndex = 7;
+            this.txDestino.Text = "Destino : ";
+            // 
+            // txDest
+            // 
+            this.txDest.Location = new System.Drawing.Point(113, 81);
+            this.txDest.Name = "txDest";
+            this.txDest.Size = new System.Drawing.Size(176, 22);
+            this.txDest.TabIndex = 11;
             // 
             // Tours
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1071, 482);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.txSalidaFinal);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.gbTransAv);
             this.Controls.Add(this.gbTranspB);
@@ -488,6 +556,8 @@
             this.gbTranspB.PerformLayout();
             this.gbTransAv.ResumeLayout(false);
             this.gbTransAv.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -525,13 +595,18 @@
         private System.Windows.Forms.TextBox txValMil;
         private System.Windows.Forms.Label txValMillas;
         private System.Windows.Forms.TextBox txTransMu;
-        private System.Windows.Forms.TextBox txDest;
-        private System.Windows.Forms.Label txDestino;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txSalidaFinal;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox txMillasCliente;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbAvion;
+        private System.Windows.Forms.RadioButton rbbarco;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txDest;
+        private System.Windows.Forms.Label txDestino;
     }
 }

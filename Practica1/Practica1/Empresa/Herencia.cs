@@ -10,25 +10,25 @@ namespace Practica1.Empresa
     {
         string Destino = "";
         string nombre = "";
-        string Cedula = "";
         string TCamarote = "";
         string THabitacion = "";
         string FechaViaje = "";
-        int DiasViaje = 0;
+        double Cedula =0;
+       // int DiasViaje = 0;
         int DiasEsta = 0;
         int Millas = 0;
         double ValorTransporte;
 
 
 
-        public Herencia(string destino, string nombre, string cedula, int diasViaje, int diasEsta,
+        public Herencia(string destino, string nombre, double cedula, int diasEsta,
                         string tCamarote, string tHabitacion, string fechaViaje, double valorTransporte, int millas)
         {
             this.Destino = destino;
             this.nombre = nombre;
             this.Cedula = cedula;
             this.Millas = millas;
-            this.DiasViaje = diasViaje;
+           // this.DiasViaje = diasViaje;
             this.DiasEsta = diasEsta;
             this.TCamarote = tCamarote;
             this.THabitacion = tHabitacion;
@@ -64,17 +64,17 @@ namespace Practica1.Empresa
             return nombre;
         }
 
-        public void setCedula(string cedula)
+        public void setCedula(double cedula)
         {
             this.Cedula = cedula;
         }
 
-        public string getCedula()
+        public double getCedula()
         {
             return Cedula;
         }
 
-        public void setDiasViaje(int diasViaje)
+      /*  public void setDiasViaje(int diasViaje)
         {
             this.DiasViaje = diasViaje;
         }
@@ -82,7 +82,7 @@ namespace Practica1.Empresa
         public int getDiasViaje()
         {
             return DiasViaje;
-        }
+        }*/
 
         public void setDiasEsta(int diasEsta)
         {
