@@ -22,8 +22,7 @@ namespace Practica1
         double Camarote = 0;
         double Habitacion = 0;
         double valor = 0;
-        //double VM = 0;
-        // double VImp = 0;
+        
 
         public Tours()
         {
@@ -57,8 +56,8 @@ namespace Practica1
                 gbTranspB.Enabled = false;
                 btCalcular.Enabled = false;
                 btEnviar.Enabled = false;
-                
-               
+
+
 
                 MessageBox.Show("A continuación adjunte el destino de Viaje");
 
@@ -74,9 +73,8 @@ namespace Practica1
                 gbTranspB.Enabled = false;
                 txDiasDViaje.Enabled = true;
                 btCalcular.Enabled = false;
-                txvalDiaBarco.Enabled = true;
                 btEnviar.Enabled = false;
-                
+
                 MessageBox.Show("A continuación adjunte el destino de Viaje");
             }
         }
@@ -121,32 +119,19 @@ namespace Practica1
 
                         objA.setValTranspAero(Convert.ToDouble(txTransAe.Text));
 
-                    
-                        if (rbLujo.Checked == true)
-                        {
-                            objH.setTCamarote("lujo");
-                        }
 
-                        if (rbNormal.Checked == true)
-                        {
-                            objH.setTCamarote("normal");
-                        }
-
-                        if (rbEconomco.Checked == true)
-                        {
-                            objH.setTCamarote("economico");
-                        }
+                 
 
                         //Validacion tipo de Habitacion
 
                         if (rbSuite.Checked == true)
                         {
-                            objH.setTHabitacion("suite");
+                            objA.setTHabitacion("suite");
                         }
 
                         if (rbHabNorm.Checked == true)
                         {
-                            objH.setTHabitacion("normal");
+                            objA.setTHabitacion("normal");
                         }
 
                     }
@@ -157,32 +142,13 @@ namespace Practica1
                 }
 
 
-
-                if (objH.getTCamarote() == "lujo")
-                {
-                    Camarote = Convert.ToDouble(objH.getDiasEsta() * 90000);
-                    txSalidaFinal.Text = "El valor total por consepto de Camarote es : " + Camarote + "\r\n";
-
-                }
-                else if (objH.getTCamarote() == "normal")
-                {
-                    Camarote = Convert.ToDouble(objH.getDiasEsta() * 70000);
-                    txSalidaFinal.Text = "El valor total por consepto de Camarote es : " + Camarote + "\r\n";
-                }
-                else if (objH.getTCamarote() == "economico")
-                {
-                    Camarote = Convert.ToDouble(objH.getDiasEsta() * 50000);
-                    txSalidaFinal.Text = "El valor total por consepto de Camarote es : " + Camarote + "\r\n";
-                }
-
-
-                if (objH.getTHabitacion() == "suite")
+                 if (objA.getTHabitacion() == "suite")
                 {
                     Habitacion = Convert.ToDouble(objH.getDiasEsta() * 120000);
                     txSalidaFinal.Text = "El valor total por consepto de Habitacion es : " + Habitacion + "\r\n";
 
                 }
-                else if (objH.getTHabitacion() == "normal")
+                else if (objA.getTHabitacion() == "normal")
                 {
                     Habitacion = Convert.ToDouble(objH.getDiasEsta() * 60000);
                     txSalidaFinal.Text = "El valor total por consepto de Habitacion es : " + Habitacion + "\r\n";
@@ -190,16 +156,15 @@ namespace Practica1
 
                 double VM = (objA.getValMillas() * Convert.ToDouble(objH.getMillas()));
                 double VImp = (objA.getValTranspAero() + objA.getValTasaAer());
-                double Total = (Habitacion + Camarote + VImp + valor) - VM;
+                double Total = (Habitacion + VImp + valor) - VM;
 
 
                 txSalidaFinal.Text = "El valor por servicio de habitacion es : $ " + Habitacion + "\r\n" +
-                    "El valor por el servicio de Tipo de Camarote es : $ " + Camarote + "\r\n" +
                     "El cliente tiene un valor acumulado por millas de : $ " + VM + "\r\n" +
                     "Valores por tasa aeropuertuaria y transporte aeropuerto de : $" + VImp + "\r\n" +
                     "Con un valor de tiquete fijo de viaje de hacia : " + txDest.Text + " por un valor de : $ " + valor + "\r\n" +
                     "Realizados los descuentos por valor de millas al cliente, el valor a cancelar por este es de \r\n" +
-                    " $ "+Total;
+                    " $ " + Total;
 
 
                 txNom.Text = "";
@@ -213,7 +178,6 @@ namespace Practica1
                 txTransAe.Text = "";
                 txTransMu.Text = "";
                 txValor.Text = "";
-                txvalDiaBarco.Text = "";
                 gbFecha.Enabled = false;
                 gbTransAv.Enabled = false;
                 gbTranspB.Enabled = false;
@@ -234,7 +198,7 @@ namespace Practica1
 
 
                     if (string.IsNullOrEmpty(txNom.Text) || string.IsNullOrEmpty(txCed.Text) || string.IsNullOrEmpty(txDest.Text)
-                       || string.IsNullOrEmpty(txDiasEstadia.Text) || string.IsNullOrEmpty(txDiasDViaje.Text) || string.IsNullOrEmpty(txTransMu.Text)
+                        || string.IsNullOrEmpty(txDiasDViaje.Text) || string.IsNullOrEmpty(txTransMu.Text)
                        || string.IsNullOrEmpty(txMillasBarco.Text) || string.IsNullOrEmpty(txValorMBarco.Text))
                     {
                         MessageBox.Show("Debe diligenciar todo el formulario");
@@ -249,45 +213,31 @@ namespace Practica1
 
                         objH.setDestino(txDest.Text);
 
-                        objH.setDiasEsta(Convert.ToInt32(txDiasEstadia.Text));
-
                         objB.setDiasViaje(Convert.ToInt32(txDiasDViaje.Text));
 
                         objB.setValorMillasBarco(Convert.ToDouble(txValorMBarco.Text));
 
                         objB.setMillasBarco(Convert.ToInt32(txMillasBarco.Text));
 
-                                               
                         objB.setValTranspAMuelle(Convert.ToDouble(txTransMu.Text));
 
-                        
+
                         if (rbLujo.Checked == true)
                         {
-                            objH.setTCamarote("lujo");
-                        }
+                            objB.setTCamarote("lujo");
+                                                    }
 
                         if (rbNormal.Checked == true)
                         {
-                            objH.setTCamarote("normal");
+                            objB.setTCamarote("normal");
                         }
 
                         if (rbEconomco.Checked == true)
                         {
-                            objH.setTCamarote("economico");
+                            objB.setTCamarote("economico");
                         }
 
-                        //Validacion tipo de Habitacion
-
-                        if (rbSuite.Checked == true)
-                        {
-                            objH.setTHabitacion("suite");
-                        }
-
-                        if (rbHabNorm.Checked == true)
-                        {
-                            objH.setTHabitacion("normal");
-                        }
-
+                        
                     }
                 }
                 catch (FormatException fe)
@@ -297,50 +247,37 @@ namespace Practica1
 
 
 
-                if (objH.getTCamarote() == "lujo")
+                if (objB.getTCamarote() == "lujo")
                 {
-                    Camarote = Convert.ToDouble(objH.getDiasEsta() * 90000);
+                    Camarote = Convert.ToDouble(objB.getDiasViaje() * 90000);
                     txSalidaFinal.Text = "El valor total por consepto de Camarote es : " + Camarote + "\r\n";
 
                 }
-                else if (objH.getTCamarote() == "normal")
+                else if (objB.getTCamarote() == "normal")
                 {
-                    Camarote = Convert.ToDouble(objH.getDiasEsta() * 70000);
+                    Camarote = Convert.ToDouble(objB.getDiasViaje() * 70000);
                     txSalidaFinal.Text = "El valor total por consepto de Camarote es : " + Camarote + "\r\n";
                 }
-                else if (objH.getTCamarote() == "economico")
+                else if (objB.getTCamarote() == "economico")
                 {
-                    Camarote = Convert.ToDouble(objH.getDiasEsta() * 50000);
+                    Camarote = Convert.ToDouble(objB.getDiasViaje() * 50000);
                     txSalidaFinal.Text = "El valor total por consepto de Camarote es : " + Camarote + "\r\n";
                 }
-
-
-                if (objH.getTHabitacion() == "suite")
-                {
-                    Habitacion = Convert.ToDouble(objH.getDiasEsta() * 120000);
-                    txSalidaFinal.Text = "El valor total por consepto de Habitacion es : " + Habitacion + "\r\n";
-
-                }
-                else if (objH.getTHabitacion() == "normal")
-                {
-                    Habitacion = Convert.ToDouble(objH.getDiasEsta() * 60000);
-                    txSalidaFinal.Text = "El valor total por consepto de Habitacion es : " + Habitacion + "\r\n";
-                }
+               
 
                 double VM = (objB.getValorMillasBarco() * Convert.ToDouble(objB.getMillasBarco()));
                 double VImp = objB.getValTranspAMuelle();
-                double Total = (Habitacion + Camarote + VImp + valor) - VM;
+                double Total = (Camarote + VImp + valor) - VM;
 
 
 
 
-                txSalidaFinal.Text = "El valor por servicio de habitacion es : $ " + Habitacion + "\r\n" +
-                    "El valor por el servicio de Tipo de Camarote es : $ " + Camarote + "\r\n" +
-                    "El cliente tiene un valor acumulado por millas de: $ " + VM + "\r\n" +
+                txSalidaFinal.Text = "El valor por el servicio de Tipo de Camarote es : $ " + Camarote + "\r\n" +
+                                     "El cliente tiene un valor acumulado por millas de: $ " + VM + "\r\n" +
                     "El valor de transporte al muelle es de un valor : $ " + VImp + "\r\n" +
                     "Con un valor de tiquete fijo de viaje de hacia " + txDest.Text + " por un valor de : $ " + valor + "\r\n" +
                     "Realizados los descuentos por valor de millas al cliente el valor a cancelar por este es de \r\n" +
-                    " $ "+Total;
+                    " $ " + Total;
 
 
                 txNom.Text = "";
@@ -352,7 +289,6 @@ namespace Practica1
                 txMillasBarco.Text = "";
                 txTransMu.Text = "";
                 txValor.Text = "";
-                txvalDiaBarco.Text = "";
                 gbFecha.Enabled = false;
                 gbTransAv.Enabled = false;
                 gbTranspB.Enabled = false;
@@ -375,56 +311,16 @@ namespace Practica1
                 btEnviar.Enabled = true;
 
             }
-            else if (txDest.Text == "Berlin")
+            else if (!string.IsNullOrEmpty(txDest.Text))
             {
 
-                valor = 5000000;
-                txValor.Text = Convert.ToString(valor);
 
                 if (rbAvion.Checked)
                 {
-                    //se que este proceso no es optimo, pero ya habia creado todo y se me habia pasado este paso por eso lo reiterativo del proceso
-                    gbInfo.Enabled = true;
-                    gbTipoCama.Enabled = true;
-                    gbTipoHab.Enabled = true;
-                    gbFecha.Enabled = true;
-                    gbTransAv.Enabled = true;
-                    txDiasDViaje.Enabled = false;
-                    txNom.Enabled = true;
-                    txCed.Enabled = true;
-                    gbTranspB.Enabled = false;
+
                     
-                    btCalcular.Enabled = true;
-
-
-                }
-                else if (rbbarco.Checked)
-                {
-
                     gbInfo.Enabled = true;
-                    gbTipoCama.Enabled = true;
-                    gbTipoHab.Enabled = true;
-                    gbFecha.Enabled = true;
-                    gbTranspB.Enabled = true;
-                    txNom.Enabled = true;
-                    txCed.Enabled = true;
-                    gbTransAv.Enabled = false;
-                    txDiasDViaje.Enabled = true;
-                    btCalcular.Enabled = true;
-
-                }
-            }
-            else if (txDest.Text == "Londres")
-            {
-
-                valor = 4000000;
-                txValor.Text = Convert.ToString(valor);
-
-                if (rbAvion.Checked)
-                {
-
-                    gbInfo.Enabled = true;
-                    gbTipoCama.Enabled = true;
+                    gbTipoCama.Enabled = false;
                     gbTipoHab.Enabled = true;
                     gbFecha.Enabled = true;
                     gbTransAv.Enabled = true;
@@ -432,100 +328,85 @@ namespace Practica1
                     txNom.Enabled = true;
                     txCed.Enabled = true;
                     gbTranspB.Enabled = false;
+
                     btCalcular.Enabled = true;
 
+                    if (txDest.Text == "Berlin")
+                    {
+                        valor = 5000000;
+                        txValor.Text = Convert.ToString(valor);
+                    }
+                    if (txDest.Text == "Londres")
+                    {
+                        valor = 4000000;
+                        txValor.Text = Convert.ToString(valor);
+
+                    }
+                    if (txDest.Text == "Praga")
+                    {
+
+                        valor = 6000000;
+                        txValor.Text = Convert.ToString(valor);
+                    }
+                    if (txDest.Text == "Roma")
+                    {
+
+                        valor = 5500000;
+                        txValor.Text = Convert.ToString(valor);
+
+                    }
                 }
                 else if (rbbarco.Checked)
                 {
+
                     gbInfo.Enabled = true;
                     gbTipoCama.Enabled = true;
-                    gbTipoHab.Enabled = true;
+                    gbTipoHab.Enabled = false;
                     gbFecha.Enabled = true;
                     gbTranspB.Enabled = true;
                     txNom.Enabled = true;
                     txCed.Enabled = true;
+                    txDiasEstadia.Enabled = false;
                     gbTransAv.Enabled = false;
                     txDiasDViaje.Enabled = true;
                     btCalcular.Enabled = true;
+
+
+                    if (txDest.Text == "Berlin")
+                    {
+                        valor = 4000000;
+                        txValor.Text = Convert.ToString(valor);
+                    }
+                    if (txDest.Text == "Londres")
+                    {
+                        valor = 3000000;
+                        txValor.Text = Convert.ToString(valor);
+
+                    }
+                    if (txDest.Text == "Praga")
+                    {
+
+                        valor = 7000000;
+                        txValor.Text = Convert.ToString(valor);
+                    }
+                    if (txDest.Text == "Roma")
+                    {
+
+                        valor = 5500000;
+                        txValor.Text = Convert.ToString(valor);
+
+                    }
                 }
-            }
-            else if (txDest.Text == "Praga")
-            {
-
-                valor = 6000000;
-                txValor.Text = Convert.ToString(valor);
-
-                if (rbAvion.Checked)
-                {
-
-                    gbInfo.Enabled = true;
-                    gbTipoCama.Enabled = true;
-                    gbTipoHab.Enabled = true;
-                    gbFecha.Enabled = true;
-                    gbTransAv.Enabled = true;
-                    txDiasDViaje.Enabled = false;
-                    txNom.Enabled = true;
-                    txCed.Enabled = true;
-                    gbTranspB.Enabled = false;
-                    btCalcular.Enabled = true;
-
-                }
-                else if (rbbarco.Checked)
-                {
-                    gbInfo.Enabled = true;
-                    gbTipoCama.Enabled = true;
-                    gbTipoHab.Enabled = true;
-                    gbFecha.Enabled = true;
-                    gbTranspB.Enabled = true;
-                    txNom.Enabled = true;
-                    txCed.Enabled = true;
-                    gbTransAv.Enabled = false;
-                    txDiasDViaje.Enabled = true;
-                    btCalcular.Enabled = true;
-                }
-            }
-            else if (txDest.Text == "Roma")
-            {
-
-                valor = 5500000;
-                txValor.Text = Convert.ToString(valor);
-
-                if (rbAvion.Checked)
-                {
-
-                    gbInfo.Enabled = true;
-                    gbTipoCama.Enabled = true;
-                    gbTipoHab.Enabled = true;
-                    gbFecha.Enabled = true;
-                    gbTransAv.Enabled = true;
-                    txDiasDViaje.Enabled = false;
-                    txNom.Enabled = true;
-                    txCed.Enabled = true;
-                    gbTranspB.Enabled = false;
-                    btCalcular.Enabled = true;
-
-                }
-                else if (rbbarco.Checked)
-                {
-                    gbInfo.Enabled = true;
-                    gbTipoCama.Enabled = true;
-                    gbTipoHab.Enabled = true;
-                    gbFecha.Enabled = true;
-                    gbTranspB.Enabled = true;
-                    txNom.Enabled = true;
-                    txCed.Enabled = true;
-                    gbTransAv.Enabled = false;
-                    txDiasDViaje.Enabled = true;
-                    btCalcular.Enabled = true;
-                }
-
-
             }
 
             txDest.Text = "";
             btIngDestino.Enabled = false;
         }
 
+        private void txvalDiaBarco_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

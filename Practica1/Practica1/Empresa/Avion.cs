@@ -8,16 +8,16 @@ namespace Practica1.Empresa
 {
     class Avion : Herencia
     {
-        
+        string THabitacion = "";
         double ValMillas = 0;
         double ValTasaAer = 0;
         double ValTranspAero=0;
 
-        public Avion(string destino, string nombre, double cedula, int diasViaje, int diasEsta, string tCamarote, string tHabitacion,string fechaViaje, double valorTransporte,
-            int millas, double valMillas, double valTasaAer, double valTranspAero) : base(destino, nombre, cedula, diasEsta, tCamarote, tHabitacion, fechaViaje, valorTransporte,millas)
+        public Avion(string destino, string nombre, double cedula, int diasEsta, string fechaViaje, double valorTransporte,
+            int millas, double valMillas, double valTasaAer, double valTranspAero, string THabitacion) : base(destino, nombre, cedula, diasEsta, fechaViaje, valorTransporte, millas)
 
         {
-
+            this.THabitacion = THabitacion;
             this.ValMillas = valMillas;
             this.ValTasaAer = valTasaAer;
             this.ValTranspAero = valTranspAero;
@@ -31,7 +31,15 @@ namespace Practica1.Empresa
 
         #region GETTER AND SETTERS
 
+        public void setTHabitacion(string tHabitacion)
+        {
+            this.THabitacion = tHabitacion;
+        }
 
+        public string getTHabitacion()
+        {
+            return THabitacion;
+        }
 
         public void setValTasaAer(double valTasaAer)
         {

@@ -49,13 +49,17 @@
             this.txCed = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.gbFecha = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.txDiasDViaje = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.txDiasEstadia = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.gbTranspB = new System.Windows.Forms.GroupBox();
+            this.txMillasBarco = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txValorMBarco = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.txTransMu = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.gbTransAv = new System.Windows.Forms.GroupBox();
@@ -74,12 +78,6 @@
             this.btEnviar = new System.Windows.Forms.Button();
             this.rbAvion = new System.Windows.Forms.RadioButton();
             this.rbbarco = new System.Windows.Forms.RadioButton();
-            this.txValorMBarco = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txMillasBarco = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txvalDiaBarco = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.gbTipoCama.SuspendLayout();
             this.gbTipoHab.SuspendLayout();
             this.gbInfo.SuspendLayout();
@@ -322,12 +320,10 @@
             // 
             // gbFecha
             // 
-            this.gbFecha.Controls.Add(this.txvalDiaBarco);
             this.gbFecha.Controls.Add(this.label17);
             this.gbFecha.Controls.Add(this.dateTimePicker1);
             this.gbFecha.Controls.Add(this.label7);
             this.gbFecha.Controls.Add(this.txDiasDViaje);
-            this.gbFecha.Controls.Add(this.label5);
             this.gbFecha.Controls.Add(this.txDiasEstadia);
             this.gbFecha.Controls.Add(this.label6);
             this.gbFecha.Enabled = false;
@@ -337,6 +333,15 @@
             this.gbFecha.TabIndex = 6;
             this.gbFecha.TabStop = false;
             this.gbFecha.Text = "Fecha";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(12, 102);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(184, 16);
+            this.label17.TabIndex = 13;
+            this.label17.Text = "Numero de Dias De Viaje";
             // 
             // dateTimePicker1
             // 
@@ -362,15 +367,6 @@
             this.txDiasDViaje.Size = new System.Drawing.Size(199, 22);
             this.txDiasDViaje.TabIndex = 10;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 130);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(237, 16);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Ingrese El valor por dia En Barco";
-            // 
             // txDiasEstadia
             // 
             this.txDiasEstadia.Location = new System.Drawing.Point(263, 56);
@@ -383,9 +379,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(12, 62);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(131, 16);
+            this.label6.Size = new System.Drawing.Size(198, 16);
             this.label6.TabIndex = 7;
-            this.label6.Text = "Dias de Estadia : ";
+            this.label6.Text = "Dias de Estadia En Hotel  : ";
             // 
             // gbTranspB
             // 
@@ -403,6 +399,40 @@
             this.gbTranspB.TabIndex = 7;
             this.gbTranspB.TabStop = false;
             this.gbTranspB.Text = "Transporte para Barco";
+            // 
+            // txMillasBarco
+            // 
+            this.txMillasBarco.Location = new System.Drawing.Point(269, 33);
+            this.txMillasBarco.Name = "txMillasBarco";
+            this.txMillasBarco.Size = new System.Drawing.Size(199, 22);
+            this.txMillasBarco.TabIndex = 11;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label16.Location = new System.Drawing.Point(18, 39);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(236, 16);
+            this.label16.TabIndex = 10;
+            this.label16.Text = "Millas Acumuladas Por El Cliente";
+            // 
+            // txValorMBarco
+            // 
+            this.txValorMBarco.Location = new System.Drawing.Point(269, 69);
+            this.txValorMBarco.Name = "txValorMBarco";
+            this.txValorMBarco.Size = new System.Drawing.Size(199, 22);
+            this.txValorMBarco.TabIndex = 9;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label14.Location = new System.Drawing.Point(18, 69);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(90, 16);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "Valor Millas";
             // 
             // txTransMu
             // 
@@ -577,61 +607,10 @@
             this.rbbarco.AutoSize = true;
             this.rbbarco.Location = new System.Drawing.Point(211, 16);
             this.rbbarco.Name = "rbbarco";
-            this.rbbarco.Size = new System.Drawing.Size(67, 20);
+            this.rbbarco.Size = new System.Drawing.Size(80, 20);
             this.rbbarco.TabIndex = 11;
-            this.rbbarco.Text = "Barco";
+            this.rbbarco.Text = "Crucero";
             this.rbbarco.UseVisualStyleBackColor = true;
-            // 
-            // txValorMBarco
-            // 
-            this.txValorMBarco.Location = new System.Drawing.Point(269, 69);
-            this.txValorMBarco.Name = "txValorMBarco";
-            this.txValorMBarco.Size = new System.Drawing.Size(199, 22);
-            this.txValorMBarco.TabIndex = 9;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label14.Location = new System.Drawing.Point(18, 69);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(90, 16);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "Valor Millas";
-            // 
-            // txMillasBarco
-            // 
-            this.txMillasBarco.Location = new System.Drawing.Point(269, 33);
-            this.txMillasBarco.Name = "txMillasBarco";
-            this.txMillasBarco.Size = new System.Drawing.Size(199, 22);
-            this.txMillasBarco.TabIndex = 11;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label16.Location = new System.Drawing.Point(18, 39);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(236, 16);
-            this.label16.TabIndex = 10;
-            this.label16.Text = "Millas Acumuladas Por El Cliente";
-            // 
-            // txvalDiaBarco
-            // 
-            this.txvalDiaBarco.Enabled = false;
-            this.txvalDiaBarco.Location = new System.Drawing.Point(263, 124);
-            this.txvalDiaBarco.Name = "txvalDiaBarco";
-            this.txvalDiaBarco.Size = new System.Drawing.Size(199, 22);
-            this.txvalDiaBarco.TabIndex = 14;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(12, 102);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(184, 16);
-            this.label17.TabIndex = 13;
-            this.label17.Text = "Numero de Dias De Viaje";
             // 
             // Tours
             // 
@@ -688,7 +667,6 @@
         private System.Windows.Forms.TextBox txCed;
         private System.Windows.Forms.GroupBox gbFecha;
         private System.Windows.Forms.TextBox txDiasDViaje;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txDiasEstadia;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -722,7 +700,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txValorMBarco;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txvalDiaBarco;
         private System.Windows.Forms.Label label17;
     }
 }

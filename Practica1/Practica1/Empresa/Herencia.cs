@@ -10,11 +10,8 @@ namespace Practica1.Empresa
     {
         string Destino = "";
         string nombre = "";
-        string TCamarote = "";
-        string THabitacion = "";
         string FechaViaje = "";
         double Cedula =0;
-       // int DiasViaje = 0;
         int DiasEsta = 0;
         int Millas = 0;
         double ValorTransporte;
@@ -22,15 +19,13 @@ namespace Practica1.Empresa
 
 
         public Herencia(string destino, string nombre, double cedula, int diasEsta,
-                        string tCamarote, string tHabitacion, string fechaViaje, double valorTransporte, int millas)
+                         string fechaViaje, double valorTransporte, int millas)
         {
             this.Destino = destino;
             this.nombre = nombre;
             this.Cedula = cedula;
             this.Millas = millas;
             this.DiasEsta = diasEsta;
-            this.TCamarote = tCamarote;
-            this.THabitacion = tHabitacion;
             this.FechaViaje = fechaViaje;
             this.ValorTransporte = valorTransporte;
 
@@ -73,16 +68,6 @@ namespace Practica1.Empresa
             return Cedula;
         }
 
-      /*  public void setDiasViaje(int diasViaje)
-        {
-            this.DiasViaje = diasViaje;
-        }
-
-        public int getDiasViaje()
-        {
-            return DiasViaje;
-        }*/
-
         public void setDiasEsta(int diasEsta)
         {
             this.DiasEsta = diasEsta;
@@ -92,36 +77,6 @@ namespace Practica1.Empresa
         {
             return DiasEsta;
         }
-
-        public void setTCamarote(string tCamarote)
-        {
-            this.TCamarote = tCamarote;
-        }
-
-        public string getTCamarote()
-        {
-            return TCamarote;
-        }
-
-        public void setTHabitacion(string tHabitacion)
-        {
-            this.THabitacion = tHabitacion;
-        }
-
-        public string getTHabitacion()
-        {
-            return THabitacion;
-        }
-
-        /* public void setTEstadia(string estadia)
-         {
-             this.Estadia = estadia;
-         }
-
-         public string getEstadia()
-         {
-             return Estadia;
-         }*/
 
         public void setFechaViaje(string fechaViaje)
         {
@@ -155,9 +110,6 @@ namespace Practica1.Empresa
 
  #endregion
             
-
-       
-
 
     }
 }

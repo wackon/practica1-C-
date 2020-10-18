@@ -12,14 +12,16 @@ namespace Practica1.Empresa
         double ValTranspAMuelle =0;
         double ValorMillasBarco = 0;
         int MillasBarco = 0;
+        string TCamarote = "";
 
-        public Barco(string destino, string nombre, double cedula,  int diasEsta, string tCamarote, string tHabitacion, string fechaViaje, double valorTransporte,
-           int millas, double valorDias, double ValTranspAMuelle,int diasViaje, double valorMillasBarco,int millasBarco) : base(destino, nombre, cedula,  diasEsta, tCamarote, tHabitacion, fechaViaje, valorTransporte,millas)
+        public Barco(string destino, string nombre, double cedula,  int diasEsta, string fechaViaje, double valorTransporte,
+           int millas, double ValTranspAMuelle,int diasViaje, double valorMillasBarco,int millasBarco, string tCamarote) : base(destino, nombre, cedula,  diasEsta, fechaViaje, valorTransporte,millas)
         {
             this.MillasBarco = millasBarco;
             this.diasViaje = diasViaje;
             this.ValTranspAMuelle = ValTranspAMuelle;
             this.ValorMillasBarco = valorMillasBarco;
+            this.TCamarote = tCamarote;
         }
 
         public Barco()
@@ -31,6 +33,17 @@ namespace Practica1.Empresa
 
         #region GETTER AND SETTERS
 
+        public void setTCamarote(string tCamarote)
+        {
+            this.TCamarote = tCamarote;
+        }
+
+        public string getTCamarote()
+        {
+            return TCamarote;
+        }
+
+       
         public void setMillasBarco(int millasBarco)
         {
             this.MillasBarco = millasBarco;
