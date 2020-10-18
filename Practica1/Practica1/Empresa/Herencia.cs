@@ -28,7 +28,6 @@ namespace Practica1.Empresa
             this.nombre = nombre;
             this.Cedula = cedula;
             this.Millas = millas;
-           // this.DiasViaje = diasViaje;
             this.DiasEsta = diasEsta;
             this.TCamarote = tCamarote;
             this.THabitacion = tHabitacion;

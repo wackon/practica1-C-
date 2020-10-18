@@ -27,7 +27,6 @@ namespace Practica1.Empresa
         public Avion()
         {
 
-
         }
 
         #region GETTER AND SETTERS
