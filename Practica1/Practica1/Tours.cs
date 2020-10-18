@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,9 @@ namespace Practica1
         Barco objB = new Barco();
         double Camarote = 0;
         double Habitacion = 0;
+        double valor = 0;
+        double VM = 0;
+        double VImp = 0;
 
         public Tours()
         {
@@ -50,7 +54,12 @@ namespace Practica1
                 gbFecha.Enabled = true;
                 gbTransAv.Enabled = true;
                 txDiasDViaje.Enabled = false;
+                txNom.Enabled = false;
+                txCed.Enabled = false;
                 gbTranspB.Enabled = false;
+                btCalcular.Enabled = false;
+
+                MessageBox.Show("A continuación adjunte el destino de Viaje");
 
 
             }
@@ -61,9 +70,13 @@ namespace Practica1
                 gbTipoHab.Enabled = true;
                 gbFecha.Enabled = true;
                 gbTranspB.Enabled = true;
+                txNom.Enabled = false;
+                txCed.Enabled = false;
                 gbTransAv.Enabled = false;
                 txDiasDViaje.Enabled = true;
+                btCalcular.Enabled = false;
 
+                MessageBox.Show("A continuación adjunte el destino de Viaje");
             }
         }
 
@@ -77,9 +90,7 @@ namespace Practica1
                 {
                     //validando campos nulos
 
-                    //|| string.IsNullOrEmpty(txDiasDViaje.Text) || string.IsNullOrEmpty(txTransMu.Text) ||
-
-
+                    
                     if (string.IsNullOrEmpty(txNom.Text) || string.IsNullOrEmpty(txCed.Text) || string.IsNullOrEmpty(txDest.Text)
                        || string.IsNullOrEmpty(txDiasEstadia.Text) || string.IsNullOrEmpty(txValMil.Text)
                        || string.IsNullOrEmpty(txTasaAero.Text) || string.IsNullOrEmpty(txTransAe.Text) ||
@@ -97,7 +108,7 @@ namespace Practica1
 
                         objH.setDestino(txDest.Text);
 
-                        objH.setDiasEsta(Convert.ToInt32(txDiasEstadia.Text));                  
+                        objH.setDiasEsta(Convert.ToInt32(txDiasEstadia.Text));
 
                         objH.setMillas(Convert.ToInt32(txMillasCliente.Text));
 
@@ -105,7 +116,7 @@ namespace Practica1
 
                         objA.setValTasaAer(Convert.ToDouble(txTasaAero.Text));
 
-                        objA.setValTasaAer(Convert.ToDouble(txTransAe.Text));
+                        objA.setValTranspAero(Convert.ToDouble(txTransAe.Text));
 
                         // objH.setDiasViaje(Convert.ToInt32(txDiasDViaje.Text));
 
@@ -116,7 +127,7 @@ namespace Practica1
                         if (rbLujo.Checked == true)
                         {
                             objH.setTCamarote("lujo");
-                        }
+                                                    }
 
                         if (rbNormal.Checked == true)
                         {
@@ -179,9 +190,26 @@ namespace Practica1
                     txSalidaFinal.Text = "El valor total por consepto de Habitacion es : " + Habitacion + "\r\n";
                 }
 
+                VM = (objA.getValMillas()*Convert.ToDouble(objH.getMillas()));
+                VImp = (objA.getValTranspAero() + objA.getValTasaAer());
+                double Total = (Habitacion+Camarote+VImp+valor)-VM;
 
 
-                
+                txSalidaFinal.Text = "El valor por servicio de habitacion es :" + Habitacion + "\r\n" +
+                    "El valor por el servicio de Tipo de Camarote es :" + Camarote + "\r\n" +
+                    "El cliente tiene un valor acumulado por millas de " + VM + "\r\n" +
+                    "Valores por tasa aeropuertuaria y transporte aeropuerto de " + VImp + "\r\n" +
+                    "Con un valor de tiquete fijo de viaje de hacia : " + txDest.Text + " por un valor de : " + valor + "\r\n" +
+                    "Realizados los descuentos por valor de millas al cliente el valor a cancelar por este es de \r\n" +
+                    Total;
+
+
+
+
+
+
+
+
 
 
 
@@ -329,10 +357,170 @@ namespace Practica1
             }
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(txDest.Text))
+            {
+                MessageBox.Show("Debe Seleccionar el lugar a Viajar para continuar");
+
+            }
+            else if (txDest.Text == "Berlin")
+            {
+
+                valor = 5000000;
+                txValor.Text = Convert.ToString(valor);
+
+                if (rbAvion.Checked)
+                {
+                    //se que este proceso no es optimo, pero ya habia creado todo y se me habia pasado este paso por eso lo reiterativo del proceso
+                    gbInfo.Enabled = true;
+                    gbTipoCama.Enabled = true;
+                    gbTipoHab.Enabled = true;
+                    gbFecha.Enabled = true;
+                    gbTransAv.Enabled = true;
+                    txDiasDViaje.Enabled = false;
+                    txNom.Enabled = true;
+                    txCed.Enabled = true;
+                    gbTranspB.Enabled = false;
+                    btCalcular.Enabled = true;
+                    
+
+                }
+                else if (rbbarco.Checked)
+                {
+
+                    gbInfo.Enabled = true;
+                    gbTipoCama.Enabled = true;
+                    gbTipoHab.Enabled = true;
+                    gbFecha.Enabled = true;
+                    gbTranspB.Enabled = true;
+                    txNom.Enabled = true;
+                    txCed.Enabled = true;
+                    gbTransAv.Enabled = false;
+                    txDiasDViaje.Enabled = true;
+                    btCalcular.Enabled = true;
+
+                }
+            }
+            else if (txDest.Text == "Londres")
+            {
+
+                valor = 4000000;
+                txValor.Text = Convert.ToString(valor);
+
+                if (rbAvion.Checked)
+                {
+
+                    gbInfo.Enabled = true;
+                    gbTipoCama.Enabled = true;
+                    gbTipoHab.Enabled = true;
+                    gbFecha.Enabled = true;
+                    gbTransAv.Enabled = true;
+                    txDiasDViaje.Enabled = false;
+                    txNom.Enabled = true;
+                    txCed.Enabled = true;
+                    gbTranspB.Enabled = false;
+                    btCalcular.Enabled = true;
+
+                }
+                else if (rbbarco.Checked)
+                {
+                    gbInfo.Enabled = true;
+                    gbTipoCama.Enabled = true;
+                    gbTipoHab.Enabled = true;
+                    gbFecha.Enabled = true;
+                    gbTranspB.Enabled = true;
+                    txNom.Enabled = true;
+                    txCed.Enabled = true;
+                    gbTransAv.Enabled = false;
+                    txDiasDViaje.Enabled = true;
+                    btCalcular.Enabled = true;
+                }
+            }
+            else if (txDest.Text == "Praga")
+            {
+
+                valor = 6000000;
+                txValor.Text = Convert.ToString(valor);
+
+                if (rbAvion.Checked)
+                {
+
+                    gbInfo.Enabled = true;
+                    gbTipoCama.Enabled = true;
+                    gbTipoHab.Enabled = true;
+                    gbFecha.Enabled = true;
+                    gbTransAv.Enabled = true;
+                    txDiasDViaje.Enabled = false;
+                    txNom.Enabled = true;
+                    txCed.Enabled = true;
+                    gbTranspB.Enabled = false;
+                    btCalcular.Enabled = true;
+
+                }
+                else if (rbbarco.Checked)
+                {
+                    gbInfo.Enabled = true;
+                    gbTipoCama.Enabled = true;
+                    gbTipoHab.Enabled = true;
+                    gbFecha.Enabled = true;
+                    gbTranspB.Enabled = true;
+                    txNom.Enabled = true;
+                    txCed.Enabled = true;
+                    gbTransAv.Enabled = false;
+                    txDiasDViaje.Enabled = true;
+                    btCalcular.Enabled = true;
+                }
+            }
+            else if (txDest.Text == "Roma")
+            {
+
+                valor = 5500000;
+                txValor.Text = Convert.ToString(valor);
+
+                if (rbAvion.Checked)
+                {
+
+                    gbInfo.Enabled = true;
+                    gbTipoCama.Enabled = true;
+                    gbTipoHab.Enabled = true;
+                    gbFecha.Enabled = true;
+                    gbTransAv.Enabled = true;
+                    txDiasDViaje.Enabled = false;
+                    txNom.Enabled = true;
+                    txCed.Enabled = true;
+                    gbTranspB.Enabled = false;
+                    btCalcular.Enabled = true;
+
+                }
+                else if (rbbarco.Checked)
+                {
+                    gbInfo.Enabled = true;
+                    gbTipoCama.Enabled = true;
+                    gbTipoHab.Enabled = true;
+                    gbFecha.Enabled = true;
+                    gbTranspB.Enabled = true;
+                    txNom.Enabled = true;
+                    txCed.Enabled = true;
+                    gbTransAv.Enabled = false;
+                    txDiasDViaje.Enabled = true;
+                    btCalcular.Enabled = true;
+                }
+
+
+            }
+
+            txDest.Text = "";
+        }
+
     }
 
 
 }
+
+
 
 
 

@@ -32,9 +32,11 @@ namespace Practica1.Empresa
 
         #region GETTER AND SETTERS
 
-        public double setValTasaAer(double valTasaAer)
+
+
+        public void setValTasaAer(double valTasaAer)
         {
-            return valTasaAer;
+            this.ValTasaAer = valTasaAer;
         }
         public double getValTasaAer()
         {
@@ -42,13 +44,16 @@ namespace Practica1.Empresa
         }
 
 
-        public double gerValorTransporteAereo() { 
-            return ValTranspAero;
-        }
         public void setValTranspAero(double valTranspAero)
         {
             this.ValTranspAero = valTranspAero;
         }
+
+        public double getValTranspAero()
+        { 
+            return ValTranspAero;
+        }
+        
 
 
         public void setValMillas(double valMillas)
